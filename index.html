@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CarePlus Hospital</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <div class="logo">CarePlus Hospital</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#doctors">Doctors</a>
+    <a href="#appointment">Appointment</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+
+  <img src="assets/bgimage.jpg" class="hero-img" />
+
+  <div class="hero-overlay">
+    <h1>24/7 Emergency Care</h1>
+    <p>Fast, Reliable & Trusted Healthcare Services</p>
+
+    <div class="hero-buttons">
+      <button onclick="scrollToSection('appointment')">Book Appointment</button>
+      <button class="emergency">Emergency Call</button>
+    </div>
+  </div>
+
+</section>
+<!-- SERVICES -->
+<section id="services">
+  <h2>Our Services</h2>
+
+  <div class="services-grid">
+    <div class="service-card" onclick="openService('Emergency Care','24/7 emergency support with immediate medical attention.')">
+  <div class="icon">🚨</div>
+  <h3>Emergency Care</h3>
+  <p>24/7 emergency support with immediate medical attention.</p>
+  <button onclick="event.stopPropagation(); bookService('Emergency Care')">Book Service</button>
+</div>
+
+<div class="service-card" onclick="openService('OPD Consultation','Expert doctors available for daily outpatient consultations.')">
+  <div class="icon">🩺</div>
+  <h3>OPD Consultation</h3>
+  <p>Expert doctors available for daily outpatient consultations.</p>
+  <button onclick="event.stopPropagation(); bookService('OPD Consultation')">Book Service</button>
+</div>
+
+<div class="service-card" onclick="openService('Lab Tests','Accurate diagnostic tests with fast and reliable reports.')">
+  <div class="icon">🧪</div>
+  <h3>Lab Tests</h3>
+  <p>Accurate diagnostic tests with fast and reliable reports.</p>
+  <button onclick="event.stopPropagation(); bookService('Lab Tests')">Book Service</button>
+</div>
+
+<div class="service-card" onclick="openService('Pharmacy','In-house pharmacy for quick access to medicines.')">
+  <div class="icon">💊</div>
+  <h3>Pharmacy</h3>
+  <p>In-house pharmacy for quick access to medicines.</p>
+  <button onclick="event.stopPropagation(); bookService('Pharmacy')">Book Service</button>
+</div>
+
+<div class="service-card" onclick="openService('Ambulance','Fast ambulance service available anytime, anywhere.')">
+  <div class="icon">🚑</div>
+  <h3>Ambulance</h3>
+  <p>Fast ambulance service available anytime, anywhere.</p>
+  <button onclick="event.stopPropagation(); bookService('Ambulance')">Book Service</button>
+</div>
+
+<div class="service-card" onclick="openService('Health Checkup','Full body health packages for preventive care.')">
+  <div class="icon">❤️</div>
+  <h3>Health Checkup</h3>
+  <p>Full body health packages for preventive care.</p>
+  <button onclick="event.stopPropagation(); bookService('Health Checkup')">Book Service</button>
+</div>
+
+    
+
+  </div>
+</section>
+
+<!-- DOCTORS -->
+<section id="doctors">
+  <h2>Our Doctors</h2>
+
+  <div class="filters">
+    <button onclick="filterDoctor('all')">All</button>
+    <button onclick="filterDoctor('cardiology')">Cardiology</button>
+    <button onclick="filterDoctor('dentist')">Dentist</button>
+    <button onclick="filterDoctor('neurology')">Neurology</button>
+    <button onclick="filterDoctor('orthopedic')">Orthopedic</button>
+    <button onclick="filterDoctor('pediatrics')">Pediatrics</button>
+  </div>
+
+  <div class="grid" id="doctorList">
+    <div class="card doctor" data-type="cardiology"
+  onclick="openDoctor(
+    'Dr. Arjun Reddy',
+    'Cardiologist',
+    '10+ Years Experience',
+    'Specialist in heart diseases, angioplasty, and cardiac care.'
+  )">
+    <img src="assets/doctors/arjun.jpg" class="doctor-img" />
+  <h3>Dr. Arjun Reddy</h3>
+  <p>Cardiologist</p>
+  <p>10+ Years Experience</p>
+</div>
+
+<div class="card doctor" data-type="cardiology"
+  onclick="openDoctor(
+    'Dr. Meera Sharma',
+    'Cardiologist',
+    '8+ Years Experience',
+    'Expert in ECG analysis, heart failure treatment, and preventive cardiology.'
+  )">
+  <img src="assets/doctors/meera.webp" class="doctor-img" />
+    <h3>Dr. Meera Sharma</h3>
+  <p>Cardiologist</p>
+  <p>8+ Years Experience</p>
+</div>
+
+<div class="card doctor" data-type="dentist"
+  onclick="openDoctor(
+    'Dr. Priya Nair',
+    'Dentist',
+    '6+ Years Experience',
+    'Specialist in root canal treatment, dental surgery, and cosmetic dentistry.'
+  )">
+  <img src="assets/doctors/priya.jpg" class="doctor-img" />
+  <h3>Dr. Priya Nair</h3>
+  <p>Dentist</p>
+  <p>6+ Years Experience</p>
+</div>
+
+<div class="card doctor" data-type="dentist"
+  onclick="openDoctor(
+    'Dr. Rahul Verma',
+    'Dentist',
+    '7+ Years Experience',
+    'Expert in oral care, implants, and advanced dental procedures.'
+  )">
+  <img src="assets/doctors/rahulvarma.jpg" class="doctor-img" />
+  <h3>Dr. Rahul Verma</h3>
+  <p>Dentist</p>
+  <p>7+ Years Experience</p>
+</div>
+
+<div class="card doctor" data-type="neurology"
+  onclick="openDoctor(
+    'Dr. Kumar Singh',
+    'Neurologist',
+    '12+ Years Experience',
+    'Specialist in brain disorders, epilepsy, and stroke management.'
+  )">
+  <img src="assets/doctors/kumarsingh.jpg" class="doctor-img" />
+  <h3>Dr. Kumar Singh</h3>
+  <p>Neurologist</p>
+  <p>12+ Years Experience</p>
+</div>
+
+<div class="card doctor" data-type="neurology"
+  onclick="openDoctor(
+    'Dr. Anjali Rao',
+    'Neurologist',
+    '9+ Years Experience',
+    'Expert in neuro disorders, migraine treatment, and brain injury care.'
+  )">
+  <img src="assets/doctors/anjali.jpg" class="doctor-img" />
+  <h3>Dr. Anjali Rao</h3>
+  <p>Neurologist</p>
+  <p>9+ Years Experience</p>
+</div>
+
+<div class="card doctor" data-type="orthopedic"
+  onclick="openDoctor(
+    'Dr. Vikram Patel',
+    'Orthopedic',
+    '11+ Years Experience',
+    'Specialist in bone fractures, joint replacement, and sports injuries.'
+  )">
+  <img src="assets/doctors/vikram.jpg" class="doctor-img" />
+  <h3>Dr. Vikram Patel</h3>
+  <p>Orthopedic</p>
+  <p>11+ Years Experience</p>
+</div>
+
+<div class="card doctor" data-type="orthopedic"
+  onclick="openDoctor(
+    'Dr. Sanjay Kumar',
+    'Orthopedic',
+    '5+ Years Experience',
+    'Expert in spine care, fracture treatment, and orthopedic surgery.'
+  )">
+  <img src="assets/doctors/sanju.jpg" class="doctor-img" />
+  <h3>Dr. Sanjay Kumar</h3>
+  <p>Orthopedic</p>
+  <p>5+ Years Experience</p>
+</div>
+
+<div class="card doctor" data-type="pediatrics"
+  onclick="openDoctor(
+    'Dr. Sneha Reddy',
+    'Pediatrician',
+    '8+ Years Experience',
+    'Child specialist in newborn care, vaccinations, and child health.'
+  )">
+  <img src="assets/doctors/sneha.jpg" class="doctor-img" />
+  <h3>Dr. Sneha Reddy</h3>
+  <p>Pediatrician</p>
+  <p>8+ Years Experience</p>
+</div>
+
+<div class="card doctor" data-type="pediatrics"
+  onclick="openDoctor(
+    'Dr. Ramesh Gupta',
+    'Pediatrician',
+    '10+ Years Experience',
+    'Expert in child growth, infections, and pediatric emergency care.'
+  )">
+  <img src="assets/doctors/ramesh.jpg" class="doctor-img" />
+  <h3>Dr. Ramesh Gupta</h3>
+  <p>Pediatrician</p>
+  <p>10+ Years Experience</p>
+</div>
+
+    
+
+  </div>
+</section>
+
+<!-- APPOINTMENT -->
+<section id="appointment">
+  <h2>Book Appointment</h2>
+
+  <form onsubmit="bookAppointment(event)">
+    <input type="text" id="name" placeholder="Full Name" required />
+    <input type="tel" id="phone" placeholder="Phone Number" required />
+
+    <select id="doctor" required>
+      <option value="">Select Doctor</option>
+      <option>Dr. Arjun Reddy</option>
+      <option>Dr. Meera Sharma</option>
+      <option>Dr. Priya Nair</option>
+      <option>Dr. Rahul Verma</option>
+      <option>Dr. Kumar Singh</option>
+      <option>Dr. Anjali Rao</option>
+      <option>Dr. Vikram Patel</option>
+      <option>Dr. Sanjay Kumar</option>
+      <option>Dr. Sneha Reddy</option>
+      <option>Dr. Ramesh Gupta</option>
+    </select>
+
+    <!-- TIME SLOTS -->
+    <select id="time" required>
+      <option value="">Select Time Slot</option>
+      <option>10:00 AM</option>
+      <option>12:00 PM</option>
+      <option>04:00 PM</option>
+    </select>
+
+    <button type="submit">Book Now</button>
+  </form>
+</section>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+  <div class="popup-box">
+    <p id="popupText"></p>
+    <button onclick="closePopup()">OK</button>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>📍 Nellore, Andhra Pradesh</p>
+  <p>📞 +91 9876543210</p>
+  <p>✉️ careplus@gmail.com</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 CarePlus Hospital | All Rights Reserved</p>
+</footer>
+
+<script src="script.js"></script>
+<!-- DOCTOR POPUP -->
+<div id="doctorModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeDoctor()">&times;</span>
+
+    <h2 id="docName"></h2>
+    <p id="docSpec"></p>
+    <p id="docExp"></p>
+    <p id="docAbout"></p>
+
+    <button onclick="goToAppointment()">
+  Book Appointment
+</button>
+  </div>
+</div>
+    <!-- BOOKING SUCCESS POPUP -->
+<div id="bookingModal" class="modal">
+  <div class="modal-content success">
+    <h2>🎉 Appointment Booked!</h2>
+    
+    <p id="bookMsg"></p>
+
+    <button onclick="closeBooking()">OK</button>
+  </div>
+</div>
+<!-- SERVICE BOOKING MODAL -->
+<div id="serviceBookModal" class="modal">
+  <div class="modal-content">
+
+    <span class="close" onclick="closeServiceBooking()">&times;</span>
+
+    <h2>Book Service</h2>
+
+    <p id="selectedServiceText"></p>
+
+    <input type="text" id="serviceUserName" placeholder="Your Name" />
+    <input type="tel" id="serviceUserPhone" placeholder="Phone Number" />
+
+    <select id="serviceTime">
+      <option value="">Select Time Slot</option>
+      <option>10:00 AM</option>
+      <option>12:00 PM</option>
+      <option>04:00 PM</option>
+      <option>06:00 PM</option>
+    </select>
+
+    <button onclick="submitServiceBooking()">
+      Confirm Booking
+    </button>
+
+  </div>
+</div>
+</body>
+</html>
